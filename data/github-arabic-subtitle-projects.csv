@@ -1,0 +1,13 @@
+repository,description,relevance,license_signal,stars_at_search,updated_at,review_status,url
+sahimar90/OkHttpPlayer,Android player with subtitle support and Arabic-subtitle tags,Playback integration,No license shown in search metadata,2,2024-11-06,Reference only,https://github.com/sahimar90/OkHttpPlayer
+sadiqaka/ARSub,Arabic Subtitles Generator,Arabic subtitle generation,No license shown in search metadata,0,2025-12-13,Reference only,https://github.com/sadiqaka/ARSub
+ach-raf/english_arabic_subtitles_AI_translator,English-to-Arabic subtitle translation,Translation workflow,No license shown in search metadata,1,2023-12-31,Reference only,https://github.com/ach-raf/english_arabic_subtitles_AI_translator
+amineelokri/Manipulation-and-Detection-of-Some-Anomalies-in-Arabic-Subtitles-File,Detects anomalies in Arabic SRT files,Subtitle quality validation,No license shown in search metadata,0,2024-08-08,Reference only,https://github.com/amineelokri/Manipulation-and-Detection-of-Some-Anomalies-in-Arabic-Subtitles-File
+D3lphi3r/SrtToUTF16,Converts Arabic subtitle encoding to Unicode,Subtitle encoding,No license shown in search metadata,0,2018-03-23,Reference only,https://github.com/D3lphi3r/SrtToUTF16
+BaselMGAG/glass_hud_translator,Arabic translation overlay using OCR and LLM,Translation/overlay,AGPL-3.0,8,2026-08-13,Reference only,https://github.com/BaselMGAG/glass_hud_translator
+sinamomken/filebot_movie_additions,Prepares Arabic subtitles and movie filenames for FileBot,Subtitle/file organization,GPL-3.0,2,2018-06-10,Reference only,https://github.com/sinamomken/filebot_movie_additions
+ivanempire/opensubs,OpenSubtitles API-related project,Subtitle metadata lookup,MIT,4,2026-05-25,Reference only,https://github.com/ivanempire/opensubs
+onursimsek/opensubtitles-api,OpenSubtitles REST API wrapper,Subtitle metadata lookup,No license shown in search metadata,7,2024-09-10,Reference only,https://github.com/onursimsek/opensubtitles-api
+rust-opensubtitles,Rust wrapper for OpenSubtitles API,Subtitle metadata lookup,No license shown in search metadata,2,2026-05-07,Reference only,https://github.com/joeyfeldberg/rust-opensubtitles
+what2watch,Uses OpenSubtitles API to fetch movie information from a directory,Media metadata workflow,No license shown in search metadata,3,2017-01-29,Reference only,https://github.com/lucassus/what2watch
+FilmsSubtitles,React movie/TV search with subtitle API integration,Media metadata workflow,No license shown in search metadata,2,2020-07-12,Reference only,https://github.com/yannickyvin/FilmsSubtitles
