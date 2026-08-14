@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Arabic Subtitle Media Catalog</title>
+  <meta name="description" content="A lawful discovery catalog for films and media resources with Arabic subtitles.">
+  <style>
+    :root{--bg:#08111f;--panel:#101d31;--panel2:#14253d;--line:#263a58;--text:#edf4ff;--muted:#9eb1cc;--accent:#57d3b5;--accent2:#7ca7ff;--warn:#ffd27a;--shadow:0 18px 50px #0005}
+    *{box-sizing:border-box} body{margin:0;background:radial-gradient(circle at 15% 0,#19385b 0,#08111f 42%);color:var(--text);font:15px/1.55 Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif}
+    a{color:inherit}.wrap{width:min(1160px,calc(100% - 32px));margin:auto}.hero{padding:64px 0 38px}.eyebrow{color:var(--accent);font-weight:800;letter-spacing:.14em;text-transform:uppercase;font-size:12px}.hero h1{max-width:800px;font-size:clamp(35px,6vw,70px);line-height:1.02;margin:14px 0 18px;letter-spacing:-.05em}.hero p{max-width:720px;color:var(--muted);font-size:18px;margin:0}.notice{margin:24px 0 34px;padding:14px 18px;border:1px solid #3e587a;background:#0e1b2d;border-radius:14px;color:#c9d7e9}.notice strong{color:var(--accent)}
+    .toolbar{position:sticky;top:12px;z-index:2;background:#0d1a2be8;backdrop-filter:blur(14px);padding:14px;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);display:grid;grid-template-columns:1.8fr 1fr 1fr auto;gap:10px;margin-bottom:24px}.toolbar input,.toolbar select{width:100%;border:1px solid #365071;background:#0b1728;color:var(--text);border-radius:11px;padding:12px 13px;font:inherit}.toolbar input:focus,.toolbar select:focus{outline:2px solid var(--accent)}.count{color:var(--muted);align-self:center;white-space:nowrap}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:30px}.stat{background:linear-gradient(145deg,#14263e,#0e1a2d);border:1px solid var(--line);border-radius:16px;padding:17px}.stat b{display:block;font-size:28px;color:var(--accent)}.stat span{color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:linear-gradient(160deg,#14253d,#0e192b);border:1px solid var(--line);border-radius:18px;padding:20px;display:flex;flex-direction:column;min-height:300px;box-shadow:0 8px 25px #0002}.card:hover{transform:translateY(-3px);border-color:#4c739b;transition:.2s}.tagrow{display:flex;justify-content:space-between;gap:8px;align-items:center}.tag{font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;border-radius:999px;padding:5px 9px;background:#233957;color:#bed0e8}.tag.ok{background:#17463f;color:#8ff0d7}.tag.review{background:#4b3b21;color:var(--warn)}.card h2{font-size:21px;line-height:1.18;margin:20px 0 8px}.meta{color:var(--muted);font-size:13px}.card p{color:#c5d1e2;margin:16px 0}.card .source{margin-top:auto;display:flex;gap:10px;align-items:center}.button{display:inline-block;background:var(--accent);color:#06221d;text-decoration:none;font-weight:800;border-radius:10px;padding:9px 13px}.button:hover{filter:brightness(1.08)}.source-note{color:var(--muted);font-size:12px}.empty{text-align:center;color:var(--muted);padding:60px;border:1px dashed var(--line);border-radius:18px;grid-column:1/-1}.footer{padding:50px 0 60px;color:var(--muted);font-size:13px}.footer a{color:var(--accent)}
+    @media(max-width:850px){.grid{grid-template-columns:repeat(2,1fr)}.toolbar{grid-template-columns:1fr 1fr}.count{grid-column:1/-1}}
+    @media(max-width:560px){.wrap{width:min(100% - 22px,1160px)}.hero{padding-top:42px}.grid,.stats{grid-template-columns:1fr}.toolbar{position:static;grid-template-columns:1fr}.hero p{font-size:16px}.card{min-height:0}}
+  </style>
+</head>
+<body>
+  <header class="wrap hero">
+    <div class="eyebrow">Open discovery catalog · Arabic subtitles</div>
+    <h1>Find films and media resources with Arabic subtitles.</h1>
+    <p>A focused, lawful directory of titles and supporting projects. Open an original source page to watch, read the rights terms, or inspect subtitle availability.</p>
+    <div class="notice"><strong>Important:</strong> This catalog links to original sources only. It does not host or redistribute copyrighted videos or subtitle files.</div>
+  </header>
+  <main class="wrap">
+    <section class="stats" aria-label="Catalog summary">
+      <div class="stat"><b id="total">0</b><span>catalog entries</span></div>
+      <div class="stat"><b id="verified">0</b><span>verified Arabic-subtitle entries</span></div>
+      <div class="stat"><b id="sources">0</b><span>source organizations</span></div>
+    </section>
+    <section class="toolbar" aria-label="Catalog filters">
+      <input id="search" type="search" placeholder="Search titles, origin, or notes…" aria-label="Search catalog">
+      <select id="type" aria-label="Filter by type"><option value="all">All types</option><option value="feature film">Feature films</option><option value="short film">Short films</option></select>
+      <select id="status" aria-label="Filter by subtitle status"><option value="all">All subtitle status</option><option value="Yes">Arabic subtitles verified</option><option value="Not confirmed">Subtitle review needed</option></select>
+      <div class="count" id="count" aria-live="polite"></div>
+    </section>
+    <section id="grid" class="grid" aria-live="polite"></section>
+  </main>
+  <footer class="wrap footer">
+    <p>Built as a public metadata catalog. Rights and availability can change; always follow the terms on the linked source page.</p>
+    <p>Repository: <a href="https://github.com/zaidlh/arabic-subtitle-media-catalog">github.com/zaidlh/arabic-subtitle-media-catalog</a> · Sources include the <a href="https://www.loc.gov/free-to-use/public-domain-films-from-the-national-film-registry/">Library of Congress</a>, <a href="https://archive.org/details/The_Night_of_Counting_the_Years">Internet Archive</a>, and <a href="https://commons.wikimedia.org/wiki/File:Sintel_movie_4K.webm">Wikimedia Commons</a>.</p>
+  </footer>
+  <script>
+    const entries = [
+      {title:'The Night of Counting the Years',type:'feature film',year:'1969',origin:'Egypt',sub:'Yes',status:'verified',rights:'Public Domain label on Internet Archive; verify jurisdiction before redistribution.',notes:'Primary item metadata explicitly describes separate Arabic UTF-8 SRT files.',url:'https://archive.org/details/The_Night_of_Counting_the_Years'},
+      {title:'Sintel',type:'short film',year:'2010',origin:'International',sub:'Yes',status:'verified',rights:'Wikimedia Commons provides reuse context on the file page; follow the stated terms.',notes:'Arabic timed text is listed on the original media page.',url:'https://commons.wikimedia.org/wiki/File:Sintel_movie_4K.webm'},
+      {title:'St. Louis Blues',type:'short film',year:'1929',origin:'United States',sub:'Not confirmed',status:'review',rights:'Library of Congress Free to Use and Reuse collection.',notes:'Arabic timed text still needs independent verification.',url:'https://www.loc.gov/item/mbrs00063365/'},
+      {title:'Popeye the Sailor Meets Sindbad the Sailor',type:'short film',year:'1936',origin:'United States',sub:'Not confirmed',status:'review',rights:'Library of Congress Free to Use and Reuse collection.',notes:'Arabic timed text still needs independent verification.',url:'https://www.loc.gov/item/mbrs00068306/'},
+      {title:'The Great Train Robbery',type:'short film',year:'1903',origin:'United States',sub:'Not confirmed',status:'review',rights:'Library of Congress Free to Use and Reuse collection.',notes:'Arabic timed text still needs independent verification.',url:'https://www.loc.gov/item/00694220/'},
+      {title:'Within Our Gates',type:'feature film',year:'1920',origin:'United States',sub:'Not confirmed',status:'review',rights:'Library of Congress Free to Use and Reuse collection.',notes:'Arabic timed text still needs independent verification.',url:'https://www.loc.gov/item/mbrs00046435/'},
+    ];
+    const grid=document.querySelector('#grid'), search=document.querySelector('#search'), type=document.querySelector('#type'), status=document.querySelector('#status');
+    document.querySelector('#total').textContent=entries.length; document.querySelector('#verified').textContent=entries.filter(e=>e.sub==='Yes').length; document.querySelector('#sources').textContent=new Set(entries.map(e=>new URL(e.url).hostname)).size;
+    function render(){const q=search.value.trim().toLowerCase(), t=type.value, s=status.value; const list=entries.filter(e=>(!q||Object.values(e).join(' ').toLowerCase().includes(q))&&(t==='all'||e.type===t)&&(s==='all'||e.sub===s)); document.querySelector('#count').textContent=`${list.length} result${list.length===1?'':'s'}`; grid.innerHTML=list.length?list.map(e=>`<article class="card"><div class="tagrow"><span class="tag">${e.type}</span><span class="tag ${e.status==='verified'?'ok':'review'}">${e.sub==='Yes'?'Arabic subtitles':'Review needed'}</span></div><h2>${e.title}</h2><div class="meta">${e.year} · ${e.origin}</div><p>${e.notes} ${e.rights}</p><div class="source"><a class="button" href="${e.url}" target="_blank" rel="noopener noreferrer">Open source ↗</a><span class="source-note">Original page</span></div></article>`).join(''):'<div class="empty">No entries match your search. Try a different title, type, or status.</div>'}
+    [search,type,status].forEach(el=>el.addEventListener('input',render)); render();
+  </script>
+</body>
+</html>
